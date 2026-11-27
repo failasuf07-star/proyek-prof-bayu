@@ -10,7 +10,7 @@ from zoneinfo import ZoneInfo
 # =====================================================
 
 st.set_page_config(
-    page_title="Environmental Monitoring System",
+    page_title="Sistem Pemantauan Cuaca",
     page_icon="🌿",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -814,7 +814,7 @@ now = datetime.now(ZoneInfo(TZ))
 
 st.markdown(f"""
 <div class="hero">
-    <h1>🌿 ENVIRONMENTAL MONITORING SYSTEM</h1>
+    <h1>🌿 SISTEM PEMANTAUAN CUACA</h1>
     <p>Integrated IoT Sensor & Weather Information Dashboard</p>
     <p>📍 Sumbersari, Kecamatan Sumbersari, Jember, Jawa Timur</p>
     <p>🕒 {now.strftime("%d %B %Y | %H:%M:%S WIB")}</p>
