@@ -1159,38 +1159,6 @@ with st.container(border=True):
         - **Cache aplikasi:** 15 menit
         """)
 
-
-# =====================================================
-# 15. CATATAN SISTEM
-# =====================================================
-
-with st.expander("📖 Catatan dan Keterbatasan Sistem"):
-
-    st.write("""
-    1. Data Local IoT masih berupa simulasi dan belum
-       terhubung langsung dengan perangkat ESP32.
-
-    2. Data BMKG merupakan prakiraan cuaca, bukan
-       pengukuran langsung dari sensor di lokasi.
-
-    3. Jika API BMKG memberikan respons 403 Forbidden,
-       aplikasi akan menampilkan status data sementara
-       tidak tersedia. Hal ini dapat disebabkan pembatasan
-       akses dari server BMKG.
-
-    4. Open-Meteo menyediakan informasi cuaca berbasis model,
-       bukan data pengukuran langsung dari sensor lokal.
-
-    5. Pembaruan data BMKG dan Open-Meteo mengikuti
-       interval cache masing-masing selama 15 menit.
-
-    6. BMP280 tidak ditampilkan sebagai parameter dashboard.
-
-    7. Integrasi aplikasi cuaca pada perangkat elektronik
-       membutuhkan API resmi dari penyedia layanan tersebut.
-    """)
-
-
 # =====================================================
 # 16. FOOTER
 # =====================================================
