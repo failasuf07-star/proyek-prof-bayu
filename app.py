@@ -875,8 +875,8 @@ except Exception:
 with st.container(key="iot-card"):
 
     monitoring_header(
-        "🌱 LOCAL IoT MONITORING",
-        "Pemantauan kondisi lingkungan melalui enam parameter sensor IoT lokal",
+        "🌱 IoT LOKAL",
+        "Pemantauan kondisi lingkungan melalui sensor IoT lokal",
         "iot-header"
     )
 
@@ -913,7 +913,7 @@ with st.container(key="iot-card"):
 with st.container(key="bmkg-card"):
 
     monitoring_header(
-        "🌦️ BMKG WEATHER INFORMATION",
+        "🌦️ INFORMASI CUACA BMKG",
         "Informasi cuaca wilayah Sumbersari, Kabupaten Jember berdasarkan data BMKG",
         "bmkg-header"
     )
@@ -996,8 +996,7 @@ with st.container(key="bmkg-card"):
     st.markdown("""
     <div class="notice-box">
         ℹ️ Data BMKG merupakan prakiraan cuaca pada waktu
-        terdekat yang tersedia, bukan hasil pengukuran langsung
-        dari sensor di lokasi.
+        terdekat yang tersedia berdasarkan kode wilayah sumbersari.
         <br><br>
         Sumber: <b>BMKG - Badan Meteorologi, Klimatologi,
         dan Geofisika.</b>
@@ -1012,7 +1011,7 @@ with st.container(key="bmkg-card"):
 with st.container(key="openmeteo-card"):
 
     monitoring_header(
-        "📱 ELECTRONIC DEVICE WEATHER",
+        "📱 APLIKASI CUACA PERANGKAT ELEKTRONIK",
         "Informasi cuaca online wilayah Sumbersari, Jember melalui Open-Meteo API",
         "openmeteo-header"
     )
@@ -1097,8 +1096,7 @@ with st.container(key="openmeteo-card"):
     st.markdown("""
     <div class="notice-box">
         ℹ️ Open-Meteo menyediakan informasi cuaca berbasis model
-        untuk wilayah Sumbersari, Jember. Data ini bukan pembacaan
-        langsung dari aplikasi cuaca pada perangkat elektronik.
+        untuk wilayah Sumbersari, Jember. 
     </div>
     """, unsafe_allow_html=True)
 
@@ -1111,7 +1109,7 @@ with st.container(border=True):
 
     st.markdown("""
     <div class="system-information-header">
-        <h3>⚙️ SYSTEM INFORMATION</h3>
+        <h3>⚙️ SISTEM INFORMASI</h3>
         <p>
             Informasi sumber data, perangkat, dan sistem
             pemantauan lingkungan
@@ -1199,9 +1197,9 @@ with st.expander("📖 Catatan dan Keterbatasan Sistem"):
 
 st.markdown("""
 <div class="footer">
-    🌿 <b>ENVIRONMENTAL MONITORING SYSTEM</b>
+    🌿 <b>SISTEM PEMANTAUAN CUACA</b>
     <br>
-    Smart Agriculture & Environmental Monitoring
+    TEP_C Universitas Jember
     <br>
     Sumbersari - Jember, Jawa Timur
     <br>
