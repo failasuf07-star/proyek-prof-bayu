@@ -1,6 +1,8 @@
 
 import streamlit as st
 import requests
+import base64
+from pathlib import Path
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -524,6 +526,72 @@ h1, h2, h3, h4, h5 {
 
 </style>
 """, unsafe_allow_html=True)
+
+
+# =====================================================
+# 2A. BACKGROUND FOTO DENGAN EFEK FADE-OUT
+# =====================================================
+
+# File background.jpeg harus berada satu folder dengan file Python ini.
+background_path = Path(__file__).parent / "background.jpeg"
+
+if background_path.exists():
+    with open(background_path, "rb") as image_file:
+        encoded_bg = base64.b64encode(image_file.read()).decode("utf-8")
+
+    st.markdown(f"""
+    <style>
+    /* Foto hanya menjadi latar belakang halaman putih.
+       Banner .hero tetap menggunakan gradasi hijau aslinya. */
+    .stApp {{
+        background-color: #f1f6f2 !important;
+        background-image:
+            linear-gradient(
+                to bottom,
+                rgba(241, 246, 242, 0.08) 0%,
+                rgba(241, 246, 242, 0.18) 25%,
+                rgba(241, 246, 242, 0.48) 48%,
+                rgba(241, 246, 242, 0.78) 68%,
+                rgba(241, 246, 242, 0.95) 86%,
+                #f1f6f2 100%
+            ),
+            url("data:image/jpeg;base64,{encoded_bg}") !important;
+        background-size: 100% auto !important;
+        background-position: top center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: scroll !important;
+    }}
+
+    /* Membiarkan foto terlihat melalui area utama Streamlit. */
+    [data-testid="stAppViewContainer"],
+    [data-testid="stMain"],
+    [data-testid="stMainBlockContainer"] {{
+        background: transparent !important;
+    }}
+
+    /* Hero hijau tetap memakai desain gradasi lama. */
+    .hero {{
+        background: linear-gradient(
+            125deg,
+            #123c2a 0%,
+            #1d6240 55%,
+            #31845a 100%
+        ) !important;
+    }}
+
+    @media (max-width: 600px) {{
+        .stApp {{
+            background-size: auto 560px !important;
+            background-position: top center !important;
+        }}
+    }}
+    </style>
+    """, unsafe_allow_html=True)
+else:
+    st.warning(
+        "File background.jpeg belum ditemukan. "
+        "Pastikan file tersebut berada satu folder dengan aplikasi Python."
+    )
 
 
 # =====================================================
